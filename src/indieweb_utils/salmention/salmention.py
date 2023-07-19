@@ -128,13 +128,13 @@ def process_salmention(
             new_nested_responses.append(response)
 
     for url in urls_in_both:
-        if url == page_url or send_upstream_webmentions == False:
+        if url == page_url or send_upstream_webmentions is False:
             continue
 
         try:
             send_webmention(url, page_url)
             urls_webmentions_sent["success"].append(url)
-        except Exception as e:
+        except Exception:
             urls_webmentions_sent["failed"].append(url)
 
     return SalmentionParsedResponse(new_nested_responses, urls_webmentions_sent, deleted_posts)

@@ -12,7 +12,8 @@ def reduce_image_size(url=None, image_data=None, pil_image=None, reduction_size=
     :type image_data: bytes
     :param pil_image: The PIL.Image object (optional).
     :type pil_image: PIL.Image
-    :param reduction_size: The scale factor by which to reduce the image, expressed as a number between 0 and 1. (i.e. 0.5 = 50%)
+    :param reduction_size: The scale factor by which to reduce the image, expressed as a number
+        between 0 and 1. (i.e. 0.5 = 50%)
     :type reduction_size: float
     :returns: The reduced image data.
     :rtype: PIL.Image

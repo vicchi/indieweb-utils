@@ -181,8 +181,8 @@ def is_site_url(url: str, domain: str) -> bool:
 
 def slugify(url: str, remove_extension: bool = False, allowed_chars: list = ["-", "/", "_", "."]) -> str:
     """
-    Turn a URL into a slug. Only alphanumeric characters, periods, dashes, and underscores are allowed in the resulting slug,
-    unless an allowed_chars list is provided.
+    Turn a URL into a slug. Only alphanumeric characters, periods, dashes, and underscores are allowed in the resulting
+    slug, unless an allowed_chars list is provided.
 
     :param url: The URL to slugify.
     :type url: str
