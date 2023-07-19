@@ -112,7 +112,7 @@ def validate_authorization_response(
             raise TokenValidationError("The challenge provided is too long.")
 
 
-def _verify_decoded_code(
+def verify_decoded_code(
     client_id: str, redirect_uri: str, decoded_client_id: str, decoded_redirect_uri: str, decoded_expires: int
 ) -> bool:
     """
@@ -143,7 +143,7 @@ def _verify_decoded_code(
         decoded_redirect_uri = "https://example.com/callback"
         decoded_expires = 3600
 
-            code_is_valid = indieweb_utils.indieauth.server._verify_decoded_code(
+            code_is_valid = indieweb_utils.indieauth.server.verify_decoded_code(
             client_id,
             redirect_uri,
             decoded_client_id,
@@ -334,7 +334,7 @@ def redeem_code(
         if code_challenge != decoded_code["code_challenge"]:
             raise AuthenticationError("Code challenge in decoded code was invalid.")
 
-    valid = _verify_decoded_code(
+    valid = verify_decoded_code(
         client_id, redirect_uri, decoded_code["client_id"], decoded_code["redirect_uri"], decoded_code["expires"]
     )
 
